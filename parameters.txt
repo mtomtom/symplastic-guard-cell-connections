@@ -1,0 +1,10 @@
+young_E1E3 40
+young_E2 400
+z_scale 1.55
+thickness 1.0
+poisson 0.3
+start_pressure 1
+end_pressure 8
+left_cell left_cell.txt
+right_cell right_cell.txt
+dirichlet dirichlet.txt
