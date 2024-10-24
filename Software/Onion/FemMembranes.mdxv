@@ -71,7 +71,7 @@ Shininess: 32
 Specular: 0.2
 UnsharpStrength: 1
 MaxNbPeels: 10
-CameraFrame: -0.988817 -0.0934721 0.116205 0 0.074778 -0.984931 -0.155947 0 0.12903 -0.145513 0.980906 0 3.26509 2.19739 -345.511 1
+CameraFrame: -0.988817 -0.0934701 0.116211 0 0.074776 -0.984932 -0.15594 0 0.129036 -0.145507 0.980907 0 3.26509 2.19739 -345.511 1
 SceneRadius: 730.95
 CameraZoom: -1.632
 
@@ -128,7 +128,7 @@ ScaleZ:1
 Scale:1.73205
 LoadMeshScaleUm: true
 LoadMeshTransform: false
-CCName: Polygon
+CCName: MeshMGXM
 Frame: 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
 Trans: 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
 
@@ -2627,16 +2627,6 @@ ParmName: Left cell pressure
 ParmString: 5.0
 ParmName: Right cell pressure
 ParmString: 5.0
-ProcessName: Model/CCF/999 Run Symplastic Connections Figure
-NumParms: 4
-ParmName: Figure
-ParmString: 2b
-ParmName: Data Folder
-ParmString: /usr/users/JIC_a5/tomkinsm/Meshes/Onion/with_anisotropy/1_2/
-ParmName: Output Folder
-ParmString: output/
-ParmName: Parameters File
-ParmString: parameters.txt
 ProcessName: Model/Plugins/Calculate Pore Area
 NumParms: 4
 ParmName: Step
@@ -2647,6 +2637,16 @@ ParmName: Transform
 ParmString: Yes
 ParmName: Rotate Z
 ParmString: No
+ProcessName: Model/Symplastic Connections/Figure simulations
+NumParms: 4
+ParmName: Figure
+ParmString: 3b
+ParmName: Data Folder
+ParmString: ../../Meshes/Onion/1_2/
+ParmName: Output Folder
+ParmString: output/
+ParmName: Parameters File
+ParmString: parameters.txt
 ProcessName: Stack/Analyses/Compute Volumes
 NumParms: 1
 ParmName: File Name
