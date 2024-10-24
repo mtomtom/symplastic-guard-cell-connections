@@ -54,7 +54,7 @@ Update globals.py to set your target output directory and change any model param
 - ```$ make```
 - ```$ make run and MorphoDynamX should open.```
 In MorphoDynamX, under /Process/Tools/Python/Python Script input fourcellsim.py or twocellsim.py for a four or two cell simulation respectively.
-Press 'Step' (the play button) to run the simulation. Thisl should now run a simulation. To run the model with an alternate mesh, replace baseline.mdxm and the associated *.txt files with those in the sub-folders named 'barley-meshes', 'brachy-meshes' and 'bdmute-meshes'.
+Press 'Step' (the play button) to run the simulation. This should now run a simulation. To run the model with an alternate mesh, replace baseline.mdxm and the associated *.txt files with those in the sub-folders named 'barley-meshes', 'brachy-meshes' and 'bdmute-meshes'.
 To create pictures/gif of the simulation.
 
 In MorphoDynamX, under /Process/Tools/Python/Python Script input take-pics.py.
@@ -68,7 +68,7 @@ In MorphoDynamX, under /Process/Model select 01 FEM Wedges and press 'Step' (the
 The version of MorphoDynamX that runs 3D elements, does not have the necessary add-on to calculate the geometric dimensions related to pore size. In order to obtain these measurements, the inflated mesh should be saved and opened in the version of MorphoDynamX in the directory 'code'.
 
 To run the automated onion models:
-Run the run_mdx_onion.sh script - ```$./ run_mdx_onion.sh```. Select "Symplastic Connections/Figure simulations" from the drop down menu on the right. Figures 3b, S2a and S2a can be run by selecting the correct respective label in the "Figure" field.
+Run the run_mdx_onion.sh script - ```$ ./run_mdx_onion.sh```. Select "Symplastic Connections/Figure simulations" from the drop down menu on the right. Figures 3b, S2a and S2a can be run by selecting the correct respective label in the "Figure" field.
 
 ## Current limitations
 
