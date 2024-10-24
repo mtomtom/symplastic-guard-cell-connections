@@ -68,7 +68,7 @@ In MorphoDynamX, under /Process/Model select 01 FEM Wedges and press 'Step' (the
 The version of MorphoDynamX that runs 3D elements, does not have the necessary add-on to calculate the geometric dimensions related to pore size. In order to obtain these measurements, the inflated mesh should be saved and opened in the version of MorphoDynamX in the directory 'code'.
 
 To run the automated onion models:
-Open the FemMembranes_onion.mdxv file. Select "Symplastic Connections/Figure simulations" from the drop down menu on the right. Figures 3b, S2a and S2a can be run by selecting the correct respective label in the "Figure" field.
+Run the run_mdx_onion.sh script - ```$./ run_mdx_onion.sh```. Select "Symplastic Connections/Figure simulations" from the drop down menu on the right. Figures 3b, S2a and S2a can be run by selecting the correct respective label in the "Figure" field.
 
 ## Current limitations
 
