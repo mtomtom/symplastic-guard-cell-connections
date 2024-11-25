@@ -780,8 +780,12 @@ bool InflateStomata::loadAndSet3DCellPressure(QString cellFileName, double press
  bool RunSymplasticConnectionsFigure::run()
  {
   QString figure3b = QString("3b");
+  QString figure3c = QString("3c");
   QString figureS2a = QString("S2a"); // Pore area vs Pressure
   QString figureS2b = QString("S2b"); // Pore area for all meshes
+  // The left and right cell labels should be in the dataFolder
+  QString leftFile = dataFolder + "left_cell.txt";
+  QString rightFile = dataFolder + "right_cell.txt";
 
   // Load in the parameters from the file
   std::unordered_map<std::string, QString> parameters;
@@ -810,6 +814,49 @@ bool InflateStomata::loadAndSet3DCellPressure(QString cellFileName, double press
     DifferentialPressureSims(inc, p, inc, parm("Output Folder"));
     }
   }
+
+  else if(parm("Figure")==figure3c)
+  {
+    // Total pressure = 5MPa
+  
+     // Set up the left and right cell pressures
+    double lCell = 5.0 * parm("Left cell pressure proportion (figure 3c)").toDouble();
+    double rCell = 5.0 - lCell;
+
+    InflateStomata is(*this);
+    QString meshFile = "onion_aniso.mdxm";
+    is.initialiseSim(dataFolder, meshFile);
+    MeshClearSelection clearSelection(*this);
+    clearSelection.run();
+    // Select all volumes
+    MeshSelectAll selectVolumes(*this);
+    selectVolumes.setParm("Dimension", "Volumes");
+    selectVolumes.run();
+
+  
+    // Set pressure of left cell
+    is.loadAndSet3DCellPressure(leftFile, lCell);
+    //Set pressure of right cell
+    is.loadAndSet3DCellPressure(rightFile, rCell);
+
+    //Run the model
+    getProcessParms("Model/CCF/01 FEM Membranes", parms);
+    if (!runProcess("Model/CCF/01 FEM Membranes", parms))
+    {
+        throw QString("Error with FEM Membranes: ") + errorMessage();
+    }
+
+    
+  }
+  // Run the FEM model
+  getProcessParms("Model/CCF/01 FEM Membranes", parms);
+  if (!runProcess("Model/CCF/01 FEM Membranes", parms))
+    {
+      throw QString("Error with FEM Membranes: ") + errorMessage();
+    }
+
+  }
+
   else if (parm("Figure")==figureS2a)
   {
     // Pore area vs pressure

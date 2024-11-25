@@ -541,10 +541,12 @@ namespace mdx
     {
       setName("Model/Symplastic Connections/Figure simulations");
       setDesc("Run the simulations for a figure in the symplastic connections paper");
-      addParm("Figure", "Choose either 3b, S2a or S2b", "3b", QStringList() << "3b" << "S2a" << "S2b");
+      addParm("Figure", "Choose either 3b, 3c, S2a or S2b", "3b", QStringList() << "3b" << "3c" << "S2a" << "S2b");
       addParm("Data Folder", "Path to folder containing the simulation files", "/usr/users/JIC_a5/tomkinsm/Meshes/Onion/with_anisotropy/1_2/");
       addParm("Output Folder","Path to folder containing the output files","output/");
       addParm("Parameters File", "Path to file containing the parameters for the simulations", "parameters.txt");
+      addParm("Left cell pressure proportion (figure 3c)", "Proportion of total pressure (5MPa) between 0 and 1", "0.9");
+  
     }
   private:
     Mesh *mesh = 0;
