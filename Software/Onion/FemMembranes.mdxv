@@ -47,8 +47,8 @@ GeneralClippingPlane1: 0.913725 0.913725 0.913725 1
 GeneralClippingPlane2: 0.913725 0.913725 0.913725 1
 GeneralClippingPlane3: 0.913725 0.913725 0.913725 1
 GeneralCuttingSurface: 0.913725 0.913725 0.913725 1
-GeneralLegend: 0 0 0 0
-GeneralScaleBar: 0 0 0 0
+GeneralLegend: 1 1 1 1
+GeneralScaleBar: 1 1 1 1
 GeneralEditedpixels: 0 0 0 0
 Stack1Mesh: 1 1 0 1
 Stack1Border: 0 1 1 1
@@ -129,7 +129,7 @@ Scale:1.73205
 LoadMeshScaleUm: true
 LoadMeshTransform: false
 CCName: MeshMGXM
-Frame: 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+Frame: 0.99762 -0.000600495 -0.0689546 0 -0.00084988 0.999779 -0.0210025 0 0.068952 0.0210111 0.997399 0 0 0 0 1
 Trans: 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
 
 
@@ -2602,15 +2602,17 @@ ParmString: Yes
 ParmName: Rotate Z
 ParmString: No
 ProcessName: Model/Symplastic Connections/Figure simulations
-NumParms: 4
+NumParms: 5
 ParmName: Figure
-ParmString: 3b
+ParmString: 3c
 ParmName: Data Folder
 ParmString: ../../Meshes/Onion/1_2/
 ParmName: Output Folder
 ParmString: output/
 ParmName: Parameters File
 ParmString: parameters.txt
+ParmName: Left cell pressure proportion (figure 3c)
+ParmString: 0.9
 ProcessName: Stack/Analyses/Compute Volumes
 NumParms: 1
 ParmName: File Name
