@@ -71,7 +71,7 @@ Shininess: 32
 Specular: 0.2
 UnsharpStrength: 1
 MaxNbPeels: 10
-CameraFrame: -0.981375 0.146365 0.124419 0 -0.164821 -0.97423 -0.15398 0 0.0986754 -0.171619 0.980209 0 3.26509 2.19739 -345.511 1
+CameraFrame: -0.992168 0.0111042 0.124419 0 -0.0303624 -0.987607 -0.15398 0 0.121167 -0.156552 0.980209 0 3.26509 2.19739 -345.511 1
 SceneRadius: 730.95
 CameraZoom: -0.96
 
@@ -110,7 +110,7 @@ Frame: 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
 
 
 [Stack:Stack1]
-MeshFile: ../../Meshes/Onion/1_2/onion_aniso.mdxm
+MeshFile: ../../Meshes/Onion/1_3/onion_aniso.mdxm
 SurfBrightness:1
 SurfOpacity:1
 SurfExplode:1
@@ -128,7 +128,7 @@ ScaleZ:1
 Scale:1.73205
 LoadMeshScaleUm: true
 LoadMeshTransform: false
-CCName: MeshMGXM
+CCName: MeshMGXM 3D
 Frame: 0.99762 -0.000600495 -0.0689546 0 -0.00084988 0.999779 -0.0210025 0 0.068952 0.0210111 0.997399 0 0 0 0 1
 Trans: 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
 
@@ -553,52 +553,6 @@ ProcessName: Mesh/CC Tools/Rename Cell Complex
 NumParms: 1
 ParmName: New Name
 ParmString: Renamed CC
-ProcessName: Mesh/Cell Atlas 3D/A Analyze Cells 3D
-NumParms: 3
-ParmName: Surface Mesh
-ParmString: Surface Mesh
-ParmName: Volume Threshold
-ParmString: 0
-ParmName: Mode
-ParmString: 0
-ProcessName: Mesh/Cell Atlas 3D/Cell Centroids
-NumParms: 0
-ProcessName: Mesh/Cell Atlas 3D/Cell Property Map
-NumParms: 0
-ProcessName: Mesh/Cell Atlas 3D/Nucleus Stress/Create Contour Attr Map
-NumParms: 0
-ProcessName: Mesh/Cell Atlas 3D/Nucleus Stress/Export Nucleus Stress Data Steve
-NumParms: 3
-ParmName: Filename Contour Data
-ParmString: 
-ParmName: Filename Min Distance
-ParmString: 
-ParmName: Wall Type Min Distance
-ParmString: Side
-ProcessName: Mesh/Cell Atlas 3D/Test/Export Cell Wall Data
-NumParms: 1
-ParmName: Filename
-ParmString: 
-ProcessName: Mesh/Cell Atlas 3D/Test/Export Face Data
-NumParms: 1
-ParmName: Filename
-ParmString: 
-ProcessName: Mesh/Cell Atlas 3D/Test/Export Face Data2
-NumParms: 2
-ParmName: Filename
-ParmString: 
-ParmName: Histogram Bins
-ParmString: 20
-ProcessName: Mesh/Cell Atlas 3D/Test/Set Cell Wall Labels
-NumParms: 1
-ParmName: Face Labeling
-ParmString: Face Type
-ProcessName: Mesh/Cell Atlas 3D/Test/Set Volume Label
-NumParms: 1
-ParmName: Label
-ParmString: 1
-ProcessName: Mesh/Cell Atlas 3D/Tools/Collapse Bezier Points
-NumParms: 0
 ProcessName: Mesh/Cell Axis/Cell Axis Average
 NumParms: 4
 ParmName: Stack
@@ -851,6 +805,88 @@ ParmName: Input Signal
 ParmString: Poisson Input
 ParmName: Poisson Signal
 ParmString: Poisson Solution
+ProcessName: Mesh/Division Analysis/Analysis 3D/Planes/Add Planes
+NumParms: 3
+ParmName: Stack
+ParmString: 
+ParmName: CC Name
+ParmString: 
+ParmName: Division Planes
+ParmString: Division Planes
+ProcessName: Mesh/Division Analysis/Analysis 3D/Planes/Local Minima
+NumParms: 6
+ParmName: Stack
+ParmString: 
+ParmName: CC Name
+ParmString: 
+ParmName: Signal
+ParmString: 
+ParmName: Division Planes
+ParmString: Division Planes
+ParmName: Minima Radius
+ParmString: 0.2
+ParmName: Clear Planes
+ParmString: Yes
+ProcessName: Mesh/Division Analysis/Analysis 3D/Selected Cell
+NumParms: 6
+ParmName: Stack
+ParmString: 
+ParmName: CC Name
+ParmString: 
+ParmName: Signal Process
+ParmString: Wall Area
+ParmName: Smooth Passes
+ParmString: 3
+ParmName: Planes Process
+ParmString: Local Minima
+ParmName: Division Point
+ParmString: Centroid
+ProcessName: Mesh/Division Analysis/Analysis 3D/Signal/Distance Center
+NumParms: 3
+ParmName: Stack
+ParmString: 
+ParmName: CC Name
+ParmString: 
+ParmName: Signal
+ParmString: Distance Center
+ProcessName: Mesh/Division Analysis/Analysis 3D/Signal/Selected Point
+NumParms: 3
+ParmName: Stack
+ParmString: 
+ParmName: CC Name
+ParmString: 
+ParmName: Signal
+ParmString: Selected Point
+ProcessName: Mesh/Division Analysis/Analysis 3D/Signal/Wall Area
+NumParms: 5
+ParmName: Stack
+ParmString: 
+ParmName: CC Name
+ParmString: 
+ParmName: Signal
+ParmString: Wall Area
+ParmName: Normalize
+ParmString: No
+ParmName: Center CC
+ParmString: 
+ProcessName: Mesh/Division Analysis/Analysis 3D/Tools/Merge Cells
+NumParms: 3
+ParmName: Stack
+ParmString: 
+ParmName: CC Name
+ParmString: 
+ParmName: Merged Cells
+ParmString: Merged Cells
+ProcessName: Mesh/Division Analysis/Analysis 3D/Tools/Sample Sphere
+NumParms: 4
+ParmName: Stack
+ParmString: 
+ParmName: Sample Sphere
+ParmString: Sample Sphere
+ParmName: Radius
+ParmString: 10.0
+ParmName: Resolution
+ParmString: 5
 ProcessName: Mesh/Heat Map/Heat Map
 NumParms: 15
 ParmName: Stack
@@ -2606,7 +2642,7 @@ NumParms: 5
 ParmName: Figure
 ParmString: 3c
 ParmName: Data Folder
-ParmString: ../../Meshes/Onion/1_2/
+ParmString: ../../Meshes/Onion/1_3/
 ParmName: Output Folder
 ParmString: output/
 ParmName: Parameters File
