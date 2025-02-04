@@ -79,7 +79,7 @@ Run the run_mdx_onion.sh script - ```$ ./run_mdx_onion.sh```. Select "Symplastic
  
 ## Microscopy data
 
-For the images used in this study, please see: [microscopy data](https://doi.org/10.5281/zenodo.14793472){:target="_blank"}.
+For the images used in this study, please see: [microscopy data](https://doi.org/10.5281/zenodo.14793472).
  
 ## Help
 For additional resources on MorphoGraphX, MorphoDynamx and MorphoMechanX please visit https://morphographx.org and Strauss, Sören, et al. "Using positional information to provide context for biological image analysis with MorphoGraphX 2.0." Elife 11 (2022): e72601.
