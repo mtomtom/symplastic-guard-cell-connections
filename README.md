@@ -77,6 +77,10 @@ Run the run_mdx_onion.sh script - ```$ ./run_mdx_onion.sh```. Select "Symplastic
   - The Python script take-pics.py works by taking screenshots within MorphoDynamX. Therefore, the overlayed text will not be in the same location for each setup. The user will need to edit take-pics.py to overlay text for their images.
   - Similarly, the heatmap is overlayed as well. If the heatmap for stress is changed from 0-75 MPa, heatmap.png will need to be replaced with a picture of the new legend.
  
+## Microscopy data
+
+For the images used in this study, please see: [microscopy data](https://doi.org/10.5281/zenodo.14793472){:target="_blank"}.
+ 
 ## Help
 For additional resources on MorphoGraphX, MorphoDynamx and MorphoMechanX please visit https://morphographx.org and Strauss, Sören, et al. "Using positional information to provide context for biological image analysis with MorphoGraphX 2.0." Elife 11 (2022): e72601.
 
