@@ -341,12 +341,12 @@ namespace mdx
     CCStructure &cs = mesh->ccStructure(ccName);
     CCIndexDataAttr &indexAttr = mesh->indexAttr();
 
-    TransformMesh tm(*this);
-    tm.run(cs, indexAttr, Point3d(0,0,-2), Point3d(0,0,0), 0.0, 1.0);
+    TranslateMesh tm(*this);
+    tm.run(cs, indexAttr, Point3d(0,0,-2));
 
     for (int i = 0; i < 41; i++) {
         mdxInfo << -2+i*0.1 << endl;
-        tm.run(cs, indexAttr, Point3d(0,0,.1), Point3d(0,0,0), 0.0, 1.0);
+        tm.run(cs, indexAttr, Point3d(0,0,.1));
         AreaMin(cs, indexAttr, num_points, poreArea, poreWidth, poreLength);
     }
 
@@ -564,16 +564,16 @@ namespace mdx
     CCStructure &cs = mesh->ccStructure(ccName);
     CCIndexDataAttr &indexAttr = mesh->indexAttr();
 
-    TransformMesh tm(*this);
-    tm.run(cs, indexAttr, Point3d(0,0,-2), Point3d(0,0,0), 0.0, 1.0);
+    TranslateMesh tm(*this);
+    tm.run(cs, indexAttr, Point3d(0,0,-2));
 
     for (int i = 0; i < 41; i++) {
         mdxInfo << -2+i*0.1 << endl;
-        tm.run(cs, indexAttr, Point3d(0,0,.1), Point3d(0,0,0), 0.0, 1.0);
+        tm.run(cs, indexAttr, Point3d(0,0,.1));
         AreaMin(cs, indexAttr, num_points, poreArea, poreWidth, poreLength);
     }
 
-    tm.run(cs, indexAttr, Point3d(0,0,-2), Point3d(0,0,0), 0.0, 1.0);
+    tm.run(cs, indexAttr, Point3d(0,0,-2));
     
     mdxInfo << "Wid: " << '\t' << poreWidth << endl;
     mdxInfo << "Len: " << '\t' << poreLength << endl;

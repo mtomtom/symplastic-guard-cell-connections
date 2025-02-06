@@ -87,13 +87,13 @@ def set_sc_pressure(press):
 def run_fem():
     Process.Model__CCF__91_Set_Face_Pressure_From_Volumes('', '', 'Fem Pressure', 'Triangle Element', 'Signal Name')
     Process.Model__CCF__01_FEM_Membranes('', '', '10', '.1', '.0001', '10', '1.1', '0.7', '0.1', '10', '0.1', 'Backward Euler', 'Preconditioned Conjugate Gradient', '50', '1e-10', 'Yes', '10e-5', 'Model/CCF/04 StressStrain', 'Model/CCF/02 Triangle Derivs', 'Model/CCF/08 Pressure Derivs', 'Model/CCF/10 Dirichlet Derivs')
-    Process.Mesh__Heat_Map__Measures_3D__Geometry__Cell_Wall_Area('', '', '', 'Cell Wall Area')
+    Process.Mesh__Heat_Map__Measures_3D__Geometry__Surface_Area('', '', '', 'Surface Area')
     Process.Mesh__Heat_Map__Measures_3D__Geometry__Volume('', '', '', 'Volume')
 
 def write_csv_save_mesh(a, press_gc, press_sc, file_path):
      
     Process.Mesh__Position__Center_Mesh()
-    Process.Mesh__Heat_Map__Measures_3D__Geometry__Cell_Wall_Area('', '', '', 'Cell Wall Area')
+    Process.Mesh__Heat_Map__Measures_3D__Geometry__Surface_Area('', '', '', 'Surface Area')
     Process.Mesh__Heat_Map__Measures_3D__Geometry__Volume('', '', '', 'Volume')
     if (a == 0): 
         Process.Model__CCF__103_Geometry_to_CSV('100',str(press_gc),str(press_sc),'data.csv','True')
