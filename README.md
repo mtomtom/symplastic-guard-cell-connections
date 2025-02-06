@@ -1,17 +1,13 @@
 # symplastic-guard-cell-connections
 
-MorophDynamX and MorphoMechanX code used in "Symplastic guard cell connections buffer pressure fluctuations to promote stomatal function in grasses"
+MorophDynamX and MorphoMechanX code used in "Symplastic guard cell connections buffer pressure fluctuations to promote stomatal function in grasses" Wilson et. al. 2024. DOI:
 
-The following code was used in "Symplastic guard cell connections buffer pressure fluctuations to promote stomatal function in grasses" Wilson et. al. 2024. DOI:
+The simulations were run on an Ubuntu 22.04 machine, with an NVIDIA graphics card. CUDA version: 12.3.107, and NVIDIA Driver Version: 560.35.03 
 
-The grass simulations were run on an Ubuntu 20.04 Virtual Machine (vmware.org) without use of an NVIDIA graphics card. However, the CUDA library and Thrust need to be installed for the models to compile. Instructions to install these can be found here.
-
-The onion simulations were run on an Ubuntu 22.04 with an NVIDIA graphics card.
-
-To install MorphoDynamX/MorphoMechanX for Ubuntu 20.04.
+To install MorphoDynamX/MorphoMechanX for Ubuntu 22.04.
 Install MorphoDynamX using the provided .deb package
 
-```$ sudo dpkg -i MDX-2.0.2-1236-Ubuntu20.04-OMP-CellMaker-FemLib-Gmsh.deb```
+```$ sudo dpkg -i MDX-2.0.2-1582-Ubuntu22.04-Cuda12-CellMaker-DivisionAnalysis-FemLib-Gmsh.deb```
 
 If MorphoDynamX fails to install, the terminal should give you an indication of why. This is most likely due to a dependency issue. Some known dependencies that could be missing at this stage are:
 
@@ -19,6 +15,8 @@ g++
 This can be installed using apt-get. Example,
 
 ```$ sudo apt-get install g++```
+
+## Barley simulations
 
 With MorphoDynamX installed, we now need to compile the source code for the models to run using MorphoMechanX.
 
@@ -53,22 +51,17 @@ Update globals.py to set your target output directory and change any model param
 - ```$ make clean```
 - ```$ make```
 - ```$ make run and MorphoDynamX should open.```
-In MorphoDynamX, under /Process/Tools/Python/Python Script input fourcellsim.py or twocellsim.py for a four or two cell simulation respectively.
-Press 'Step' (the play button) to run the simulation. This should now run a simulation. To run the model with an alternate mesh, replace baseline.mdxm and the associated *.txt files with those in the sub-folders named 'barley-meshes', 'brachy-meshes' and 'bdmute-meshes'.
+In MorphoDynamX, under /Process/Tools/Python/Python Script input inflate-outputs.py.
+Press 'Step' (the play button) to run the simulation. This should now run a simulation.
 To create pictures/gif of the simulation.
 
 In MorphoDynamX, under /Process/Tools/Python/Python Script input take-pics.py.
 Press 'Step' (the play button) to create the pictures/gif. The output input/output directory is that specified in globals.py. (Also see limitations below)
-To run the model using 3D Elements
-In a terminal, navigate to the directory code-3d
-- ```$ make clean```
-- ```$ make```
-- ```$ make run and MorphoDynamX should open.```
-In MorphoDynamX, under /Process/Model select 01 FEM Wedges and press 'Step' (the play button) to run the simulation.
-The version of MorphoDynamX that runs 3D elements, does not have the necessary add-on to calculate the geometric dimensions related to pore size. In order to obtain these measurements, the inflated mesh should be saved and opened in the version of MorphoDynamX in the directory 'code'.
+
+## Onion models
 
 To run the automated onion models:
-Run the run_mdx_onion.sh script - ```$ ./run_mdx_onion.sh```. Select "Symplastic Connections/Figure simulations" from the drop down menu on the right. Figures 3b, S2a and S2a can be run by selecting the correct respective label in the "Figure" field.
+Run the run_mdx_onion.sh script - ```$ ./run_mdx_onion.sh```. There is no need to compile the code first, as this script will do this automatically. Select "Symplastic Connections/Figure simulations" from the drop down menu on the right. Figures 3b, 3c, S2a and S2b can be run by selecting the correct respective label in the "Figure" field.
 
 ## Current limitations
 
